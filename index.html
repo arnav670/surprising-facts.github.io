@@ -18,6 +18,20 @@
 			color: black;
 		}
 
+	
+::-webkit-scrollbar
+{
+    width: 0;
+}
+#progressbar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 15px;
+    border-radius: 10px;
+    background: linear-gradient(to top, #fcb045, #fd1d1d, #833ab4);
+}
+	
 </style>
 
 <br>
@@ -154,5 +168,24 @@
 </p>
 <button style="padding:20px; background:red; color:white;"><a href=https://i.postimg.cc/QNBhfbPZ/20th-fact.jpg>View Picture</a></button>
 
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--     <title>Document</title> -->
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(window).scroll(function(){
+            var scroll = $(window).scrollTop(),
+            dh = $(document).height(),
+            wh = $(window).height();
+            scrollPercent = (scroll / (dh-wh)) * 100;
+            $('#progressbar').css('height', scrollPercent + '%');
+        })
+</body>
+</html>
 
